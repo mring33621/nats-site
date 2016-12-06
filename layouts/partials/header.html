@@ -45,34 +45,26 @@
             {{ $currentNode := . }}
             {{ range .Site.Menus.main }}
             {{ if .HasChildren }}
-            <!-- <li class="hidden-md hidden-lg dropdown{{if $currentNode.HasMenuCurrent " main " . }} active{{end}}">
+
+
+
+            {{ if eq .Name "Products" }}
+            <li class="dropdown{{if $currentNode.HasMenuCurrent " main " . }} active{{end}}">
               <a href="{{.URL}}" class="main-item dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ .Pre }}{{ .Name }} <span class="caret"></span></a>
               <ul class="dropdown-menu">
               {{ range .Children }}
-                <li class="dropdown-header{{ if .HasChildren }} main-header{{ end }}">{{ .Name }}</li>
-                {{ if .HasChildren }}
-                {{ range .Children }}
-                  {{ if .HasChildren }}
-                  <li class="dropdown-header">{{ .Name }}</li>
-                  {{ range .Children }}
-                  <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                  {{ end }}
-                  {{ else }}
-                  <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                  {{ end }}
-                {{ end }}
-                {{ else }}
                 <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                {{ end }}
-                <li role="separator" class="divider"></li>
               {{ end }}
               </ul>
-            <li> -->
-            <li class="dropdown{{if $currentNode.HasMenuCurrent " main " . }} active{{end}}">
+            <li>
+            {{else}}
+            <li class="{{if $currentNode.HasMenuCurrent " main " . }} active{{end}}">
               <a class="main-item" href="{{.URL}}">{{ .Pre }}<span>{{ .Name }}</span></a>
             </li>
+            {{end}}
+
             {{else}}
-            <li class="dropdown{{if $currentNode.HasMenuCurrent " main " . }} active{{end}}">
+            <li class="{{if $currentNode.HasMenuCurrent " main " . }} active{{end}}">
               <a class="main-item" href="{{.URL}}">{{ .Pre }}<span>{{ .Name }}</span></a>
             </li>
             {{end}}
