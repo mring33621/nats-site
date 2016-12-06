@@ -44,7 +44,7 @@ pygmentsstyle = "native"
     name = "NATS Cloud"
     weight = 2
     identifier = "nats-cloud-product"
-    url = "#"
+    url = "/nats-cloud"
     parent = "products"
 
 [[menu.main]]
