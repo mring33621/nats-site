@@ -7748,5 +7748,8 @@ footer#home-page-footer .social .icon {
     text-align: center;
   }
 }
+#nats-cloud-page dl dd {
+  margin-bottom: 15px;
+}
 
 /*# sourceMappingURL=styles.css.map */
